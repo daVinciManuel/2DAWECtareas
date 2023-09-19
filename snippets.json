@@ -1,0 +1,9 @@
+{
+    "html":{
+        "snippets":{
+            "meta:nm":"meta[name=${name} content=${contentName}]+meta:vp",
+
+            "oh-vaya":"!!!+(html[lang=${lang}]>(head>meta[charset=${charset}]+meta:vp+meta[name=${name} content=${contentName}]+link[rel=\"stylesheet\" href=\"css/style.css\"]+(script[src=\"js/file\" type=\"text/javascript\"]))+(body>(header)+(nav)+(main>(section>(article>(div))))+(footer)+(aside)))"
+        }
+    }
+}
