@@ -1,12 +1,12 @@
 console.log('hello world')
 
-// window.onload = comienzo;
+window.onload = comienzo;
 
 
 // const textarea = document.getElementsByName("box");
 
 
-window.onclick = comienzo;
+// window.onclick = comienzo;
 function comienzo(){
     let VstResuelto="|";
     for(let i = 2; i < 100; i++){
