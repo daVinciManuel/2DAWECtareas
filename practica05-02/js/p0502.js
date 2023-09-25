@@ -8,14 +8,14 @@ window.onload = comienzo;
 
 // window.onclick = comienzo;
 function comienzo(){
-    let VstResuelto="";
+    let VstResuelto="|";
     let i = 2;
     let contador = 0;
     while(contador<100){
         if(numeroPrimo(i)){
             VstResuelto += i.toString() + "|";
-            contador++;
         }
+        contador++;
         i++;
         console.log(contador)
     }
