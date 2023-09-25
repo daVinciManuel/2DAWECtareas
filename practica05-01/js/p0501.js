@@ -19,10 +19,11 @@ function comienzo(){
 
 function numeroPrimo(numero) {
     let VboPrimo = true;
-    for (let i = numero; i > 1; i--){
+    for (let i = 2; i < numero; ++i){
         if(numero % i == 0)
             VboPrimo = false
     }
-        
+    // console.log(VboPrimo, numero);
+    
     return VboPrimo;
 }

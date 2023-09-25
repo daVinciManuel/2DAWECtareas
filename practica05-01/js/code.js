@@ -20,3 +20,12 @@ function numeroPrimo(numero) {
         
     return VboPrimo;
 }
+
+function comienzo(){
+    document.formulario.button.onclick = tratar;
+}
+function tratar()    {
+    let VstUno = document.formulario.inicio.value;
+    let VstDos = document.formulario.final.value;
+    let VitUno = parseInt(VstUno,10);
+}
