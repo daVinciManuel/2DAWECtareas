@@ -3,6 +3,7 @@ console.log('Hello world');
 window.onload = function (){
     document.formulario.btn.onclick = tratar;
 }
+tratar();
 function tratar(){
     
     const VstNumber = document.formulario.decimal.value;
@@ -13,7 +14,7 @@ function tratar(){
     let nBinario = binaryOf(VitNumber)
     let nOctal = octalOf(VitNumber)
     let nHex = hexOf(VitNumber)
-    document.formulario.binario.vale = nBinario;
+    document.formulario.binario.value = nBinario;
     document.formulario.octal.value = nOctal;
     document.formulario.hexadecimal.value = nHex;
 }
@@ -28,6 +29,8 @@ function binaryOf(number){
             resto = (number % 2);
             solucion = resto.toString() + solucion.toString();
             number = Math.trunc(number / 2);
+            console.log("solucion: "+solucion+"resto: ",resto,"numbers: ",number)
+            console.log(number);
         }
     }
     return solucion;
