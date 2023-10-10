@@ -4,9 +4,9 @@ window.onload = () => {
 
 document.formulario.btn.onclick = calcular;
 }
-    const consonantes = text => Array.from(text.toLowerCase()).filter(letter => "qwrtypsdfghjklñzxcvbnm".includes(letter)).length;
-    const vocales = text => Array.from(text.toLowerCase()).filter(letter => "aeoiu".includes(letter)).length;
-    const vocalX = (text,x) => Array.from(text.toLowerCase()).filter(letter => x.toLowerCase().includes(letter)).length;
+    const consonantes = text => Array.from(rmWhiteSpace(text.toLowerCase())).filter(letter => "qwrtypsdfghjklñzxcvbnm".includes(letter)).length;
+    const vocales = text => Array.from(rmWhiteSpace(text.toLowerCase())).filter(letter => "aeoiu".includes(letter)).length;
+    const vocalX = (text,x) => Array.from(rmWhiteSpace(text.toLowerCase())).filter(letter => x.toLowerCase().includes(letter)).length;
 function calcular(){
     var input = document.formulario.cadena.value;
     input = input.toString();
@@ -30,6 +30,7 @@ function rmWhiteSpace(t){
     newString = t.replace(" ","")
     if(newString != t){
         newString = rmWhiteSpace(newString);
+        return newString
     }else{
         return newString
     }
