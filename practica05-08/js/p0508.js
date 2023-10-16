@@ -7,9 +7,12 @@ window.onload = () => {
 // mmmmmain.
 // -----------------------------------------------------
 function verificar() {
+    const msg = document.formu.msg
     const fecha = document.formu.fecha.value
-    document.formu.msg.value = "Hello... it's there anybody in there...? "
-    document.formu.msg.value = document.formu.msg.value.concat(", "+document.formu.fecha.value)
+
+    msg.value = "Introduzca una fecha valida\n(dd/mm/aaaa)\n"
+    msg.value = msg.concat(""+fecha)
     console.log(document.formu.msg.value)
     console.log(fecha)
+    // SOLO FALTA VALIDAR LA FECHA CONTANDO AÑOS BISIESTOS ASLDKFJAKLSDFJASDKLFJASDKFJASDFKL
 }
