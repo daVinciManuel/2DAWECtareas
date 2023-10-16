@@ -23,7 +23,21 @@ function verificar() {
         document.formu.msg.value = document.formu.msg.value.replaceAll("2. Debe contener más de 3 caracteres.","")
     }
 // (3)
-    charsValid(document.formu.nombre.value)
+    if(!charsValid(document.formu.nombre.value)){
+        if(!document.formu.msg.value.includes("3."))
+            document.formu.msg.value = document.formu.msg.value.concat("\n3. Solo puede contener un caracter letra, \"º\", \"ª\" o \"-\" entre el primer y último caracter");
+    }else{
+        document.formu.msg.value = document.formu.msg.value.replaceAll("3. Solo puede contener un caracter letra, \"º\", \"ª\" o \"-\" entre el primer y último caracter","");
+}
+// (4)
+    if(!longitudValida(document.formu.nombre.value)){
+        if(!document.formu.msg.value.includes("4."))
+            document.formu.msg.value = document.formu.msg.value.concat("\n4. Debe tener minimo 3 caracteres y máximo 27");
+    }else{
+        document.formu.msg.value = document.formu.msg.value.replaceAll("4. Debe tener minimo 3 caracteres y máximo 27","");
+    }
+    
+
 }
 // __________________________________________________________________________________________________
 // Validacion parte 1.
@@ -67,6 +81,27 @@ function lengthValidate(t){
 // -------------------------------------------------------------------------------------------
 // Validacion parte 3.
 function charsValid(t){
-   console.log(t.substring(1,t.length-1))
-   textoMedio = t.substring(1,t.length-1)
+    console.log(t.substring(1,t.length-1))
+    textoMedio = t.substring(1,t.length-1)
+    valid = true;
+    letters = textoMedio.split("")
+    letters.forEach(l => {
+       if(!(esLetra(l) || l == "º" || l == "ª" || l == "-")) {
+            valid = false;
+       }
+    });
+    if(valid){
+        return true;
+    }else{
+        return false;
+    }
+}
+// -------------------------------------------------------------------------------------------
+// Validacion parte 4.
+function longitudValida(t){
+   if(t.length >= 3 && t.length <= 27){
+    return true;
+   }else{
+    return false;
+   }
 }
