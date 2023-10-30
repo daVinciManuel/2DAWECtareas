@@ -3,7 +3,7 @@ console.log('Hello world')
 window.onload = () => {
     document.formu.btn.onclick = verificar
 }
-const nombre = document.formu.nombre.value
+// const nombre = document.formu.nombre.value
 // mmmmmain.
 // -----------------------------------------------------
 function verificar() {
