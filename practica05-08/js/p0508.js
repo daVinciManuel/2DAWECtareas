@@ -19,9 +19,9 @@ function verificar() {
         fecha.trim().split("").forEach(char => {
             if (!(validChars.includes(char))) {
                 isValid = false
-            }else{
+            }/*else{
                 isValid = true
-            }
+            }*/
         });
         if(fecha.indexOf("/") == 1){
             console.log("fecha antes: "+fecha)
@@ -51,6 +51,7 @@ function verificar() {
         }else if(fecha.substring(3,5) > 13){
             // msg.value = "Error. El mes no existe"
             msg.value = "Error."
+            isValid=false
         // ------------------------------------- CONDICIONES MENSUALES -------------------------------------
         }else if( !(max31D(fecha))){
             // msg.value = "Error. El mes tiene un máximo de 31 días"
@@ -85,6 +86,7 @@ function verificar() {
             console.log("separador 1: "+ fecha.charAt(2))
             console.log("separador 2: "+ fecha.charAt(5))
             console.log("------------------")
+            msg.value = "Correcto"
         }
     }
     console.log("la fecha es: "+ fecha)
@@ -95,7 +97,7 @@ function verificar() {
 // ///////////////////// UTILIDADES //////////////////////////////////////////////////////////////////////////////// 
 function esBisiesto(n){
     year = n.substring(6,10)
-    if(n.substring(3,5) == 2 && year % 4 == 0 && (year % 100 != 0 || (year % 100 == 0 && year % 400 == 0))){
+    if(n.substring(3,5) == 2 && year % 4 == 0 && (year % 100 != 0 || (/*year % 100 == 0 &&*/ year % 400 == 0))){
         return true;  
     }else{
         return false;
